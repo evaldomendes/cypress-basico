@@ -11,17 +11,17 @@ describe('Nosso primeiro teste automatizado', () => {
 
     it('Login com credenciais inválidas', () => {
         cy.login('student', 'Password1234')
-        cy.get('h1').contains('Logged In Successfully').should('be.visible')
+        cy.get('h1').contains('Your password is invalid!').should('be.visible')
     })
 
     it('Login com campo de senha em branco', () => {
         cy.login('student', '')
-        cy.get('h1').contains('Logged In Successfully').should('be.visible')
+        cy.get('h1').contains('Your password is invalid!').should('be.visible')
     })
 
     it('Login com campo de e-mail em branco', () => {
         cy.login('', 'student')
-        cy.get('h1').contains('Logged In Successfully').should('be.visible')
+        cy.get('h1').contains('Your password is invalid!').should('be.visible')
     })
 
 })
