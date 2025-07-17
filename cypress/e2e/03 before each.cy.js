@@ -1,4 +1,4 @@
-describe('Nosso primeiro teste automatizado', () => {
+describe('Before each', () => {
 
     beforeEach(() => {
         cy.visit('https://practicetestautomation.com/practice-test-login/')
@@ -15,13 +15,13 @@ describe('Nosso primeiro teste automatizado', () => {
     })
 
     it('Login com campo de senha em branco', () => {
-        cy.login('student', '')
+        cy.login('student', ' ')
         cy.get('#error').contains('Your password is invalid!').should('be.visible')
     })
 
     it('Login com campo de e-mail em branco', () => {
-        cy.login('', 'student')
-        cy.get('#error').contains('Your password is invalid!').should('be.visible')
+        cy.login(' ', 'student')
+        cy.get('#error').contains('Your username is invalid!').should('be.visible')
     })
 
 })

@@ -1,4 +1,4 @@
-describe('Nosso primeiro teste automatizado', () => {
+describe('Comandos customizados', () => {
 
 
     it.only('Login usando comandos customizados', () => {
