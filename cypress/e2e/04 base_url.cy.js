@@ -1,7 +1,7 @@
 describe('Before each', () => {
 
     beforeEach(() => {
-        cy.visit('https://practicetestautomation.com/practice-test-login/')
+        cy.visit('/practice-test-login/')
     })
 
     it('Login com credenciais válidas', () => {

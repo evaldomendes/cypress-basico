@@ -1,6 +1,5 @@
 describe('Comandos customizados', () => {
 
-
     it.only('Login usando comandos customizados', () => {
         cy.visit('https://practicetestautomation.com/practice-test-login/')
         cy.login('student', 'Password123')
