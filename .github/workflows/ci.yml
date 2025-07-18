@@ -1,30 +1,15 @@
 name: Cypress Tests
 
-on:
-  push:
-    branches:
-      - develop # ou a branch principal do seu projeto, como 'master'
-  pull_request:
-    branches:
-      - develop # ou a branch principal do seu projeto
+on: push
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest # O sistema operacional onde os testes serão executados
-
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4 # Baixa o código do seu repositório
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          node-version: '18' # Use a versão do Node.js que seu projeto requer
-
-      - name: Install Dependencies
-        run: npm i # Ou 'npm install' se você não tiver um package-lock.json
-
-      - name: Run Cypress Tests
-        run: npm run cypress:run # Ou o comando que você usa para rodar o Cypress localmente
-        env:
-          CI: true # Garante que o Cypress seja executado em modo CI
+          build: npm i
+          start: npm run cypress:run
