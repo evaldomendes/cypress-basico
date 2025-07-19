@@ -25,6 +25,6 @@ jobs:
         run: npm i
 
       - name: Run Cypress Tests
-        run: npm run cypress:run # Ou o comando que você usa para rodar o Cypress localmente
+        run: npx cypress run # Ou o comando que você usa para rodar o Cypress localmente
         env:
           CI: true # Garante que o Cypress seja executado em modo CI
